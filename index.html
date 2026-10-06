@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>midnight — chill space</title>
+<meta name="description" content="A tiny late-night chill space.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#080b12;--text:#e8edf5;--muted:#8993a6;--line:rgba(255,255,255,.09);--glass:rgba(16,21,32,.62);--accent:#9db7ff}
+body{min-height:100vh;color:var(--text);font-family:Manrope,system-ui,sans-serif;background:radial-gradient(circle at 20% 15%,#17233d 0,transparent 32%),radial-gradient(circle at 80% 75%,#1c2630 0,transparent 28%),var(--bg);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:70px 70px;animation:drift 24s linear infinite}
+@keyframes drift{to{background-position:70px 70px}}
+.wrap{width:min(920px,92%);margin:auto;padding:7vh 0 35px;position:relative}
+nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:14vh;color:var(--muted);font:500 12px "DM Mono",monospace;letter-spacing:.12em}
+.logo{color:var(--text);letter-spacing:.18em}.status{display:flex;align-items:center;gap:8px}.dot{width:6px;height:6px;border-radius:50%;background:#9be7bb;box-shadow:0 0 14px #9be7bb}
+.hero{text-align:center;margin-bottom:55px}.eyebrow{color:var(--muted);font:400 12px "DM Mono",monospace;letter-spacing:.18em;text-transform:uppercase;margin-bottom:18px}
+h1{font-size:clamp(48px,10vw,92px);line-height:.95;letter-spacing:-.07em;font-weight:600;background:linear-gradient(120deg,#fff,#9da8bb 65%,#7088b8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{margin:20px auto 0;max-width:520px;color:var(--muted);font-size:15px;line-height:1.8}
+.grid{display:grid;grid-template-columns:1.25fr .75fr;gap:14px}
+.card{background:var(--glass);border:1px solid var(--line);border-radius:24px;padding:25px;backdrop-filter:blur(18px);box-shadow:0 20px 70px rgba(0,0,0,.22)}
+.quote{min-height:220px;display:flex;flex-direction:column;justify-content:space-between}.label{color:var(--muted);font:400 11px "DM Mono",monospace;letter-spacing:.15em;text-transform:uppercase}
+#quote{font-size:22px;line-height:1.5;letter-spacing:-.02em}.author{color:var(--muted);font-size:12px}
+.clock{text-align:center;display:flex;flex-direction:column;justify-content:center}.time{font:500 clamp(36px,7vw,58px) "DM Mono",monospace;letter-spacing:-.06em}.date{color:var(--muted);font-size:12px;margin-top:8px}
+.player{margin-top:14px;display:flex;align-items:center;gap:15px}.play{border:0;width:52px;height:52px;border-radius:50%;cursor:pointer;background:#e8edf5;color:#080b12;font-size:17px;transition:.2s}.play:hover{transform:scale(1.06)}
+.track{flex:1}.track strong{font-size:14px;font-weight:600}.track span{display:block;color:var(--muted);font-size:11px;margin-top:4px}.bar{height:3px;background:rgba(255,255,255,.1);border-radius:99px;margin-top:14px;overflow:hidden}.bar i{display:block;width:28%;height:100%;background:var(--accent);border-radius:99px}
+footer{text-align:center;margin-top:55px;color:#566074;font:400 10px "DM Mono",monospace;letter-spacing:.12em}
+@media(max-width:700px){.wrap{padding-top:28px}.grid{grid-template-columns:1fr}nav{margin-bottom:18vh}.quote{min-height:190px}.sub{font-size:14px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<nav><span class="logo">MIDNIGHT.</span><span class="status"><i class="dot"></i> ONLINE</span></nav>
+<section class="hero">
+<div class="eyebrow">a small place to slow down</div>
+<h1>take it easy.</h1>
+<p class="sub">Không cần phải vội. Hít một hơi, nghe một chút nhạc, và để mọi thứ chậm lại.</p>
+</section>
+<section class="grid">
+<article class="card quote">
+<div class="label">today's thought</div>
+<div id="quote">“You don't have to figure everything out tonight.”</div>
+<div class="author">— midnight reminder</div>
+</article>
+<article class="card clock">
+<div class="label">local time</div>
+<div class="time" id="time">00:00</div>
+<div class="date" id="date">loading...</div>
+</article>
+</section>
+<section class="card player">
+<button class="play" id="play" aria-label="Play or pause">▶</button>
+<div class="track"><strong>late night / quiet room</strong><span id="state">click play for ambience</span><div class="bar"><i id="progress"></i></div></div>
+</section>
+<footer>made for quiet nights · Bngocc-code / Code-01</footer>
+</main>
+<script>
+const quotes=[
+["“You don't have to figure everything out tonight.”","— midnight reminder"],
+["“Some days, surviving is already enough.”","— a quiet thought"],
+["“Rest is not falling behind.”","— slow down"],
+["“It's okay to be a work in progress.”","— midnight reminder"],
+["“Tomorrow can wait. Breathe first.”","— 02:17 AM"]
+];
+let qi=0;
+setInterval(()=>{const d=new Date();document.querySelector('#time').textContent=d.toLocaleTimeString('vi-VN',{hour:'2-digit',minute:'2-digit'});document.querySelector('#date').textContent=d.toLocaleDateString('vi-VN',{weekday:'long',day:'2-digit',month:'2-digit',year:'numeric'});},1000);
+document.querySelector('#quote').addEventListener('click',()=>{qi=(qi+1)%quotes.length;document.querySelector('#quote').textContent=quotes[qi][0];document.querySelector('.author').textContent=quotes[qi][1]});
+let playing=false, t=28;
+document.querySelector('#play').onclick=()=>{playing=!playing;document.querySelector('#play').textContent=playing?'Ⅱ':'▶';document.querySelector('#state').textContent=playing?'ambience mode on':'paused — back to silence'};
+setInterval(()=>{if(playing){t=t>=100?0:t+.18;document.querySelector('#progress').style.width=t+'%'}},1000);
+</script>
+</body>
+</html>
