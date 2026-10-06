@@ -2,73 +2,34 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>midnight — chill space</title>
-<meta name="description" content="A tiny late-night chill space.">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>WELCOME TO BABYLUS — Iruma-kun</title>
+<meta name="description" content="A fan-made Iruma-kun themed website.">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap');
-*{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#080b12;--text:#e8edf5;--muted:#8993a6;--line:rgba(255,255,255,.09);--glass:rgba(16,21,32,.62);--accent:#9db7ff}
-body{min-height:100vh;color:var(--text);font-family:Manrope,system-ui,sans-serif;background:radial-gradient(circle at 20% 15%,#17233d 0,transparent 32%),radial-gradient(circle at 80% 75%,#1c2630 0,transparent 28%),var(--bg);overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:70px 70px;animation:drift 24s linear infinite}
-@keyframes drift{to{background-position:70px 70px}}
-.wrap{width:min(920px,92%);margin:auto;padding:7vh 0 35px;position:relative}
-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:14vh;color:var(--muted);font:500 12px "DM Mono",monospace;letter-spacing:.12em}
-.logo{color:var(--text);letter-spacing:.18em}.status{display:flex;align-items:center;gap:8px}.dot{width:6px;height:6px;border-radius:50%;background:#9be7bb;box-shadow:0 0 14px #9be7bb}
-.hero{text-align:center;margin-bottom:55px}.eyebrow{color:var(--muted);font:400 12px "DM Mono",monospace;letter-spacing:.18em;text-transform:uppercase;margin-bottom:18px}
-h1{font-size:clamp(48px,10vw,92px);line-height:.95;letter-spacing:-.07em;font-weight:600;background:linear-gradient(120deg,#fff,#9da8bb 65%,#7088b8);-webkit-background-clip:text;background-clip:text;color:transparent}
-.sub{margin:20px auto 0;max-width:520px;color:var(--muted);font-size:15px;line-height:1.8}
-.grid{display:grid;grid-template-columns:1.25fr .75fr;gap:14px}
-.card{background:var(--glass);border:1px solid var(--line);border-radius:24px;padding:25px;backdrop-filter:blur(18px);box-shadow:0 20px 70px rgba(0,0,0,.22)}
-.quote{min-height:220px;display:flex;flex-direction:column;justify-content:space-between}.label{color:var(--muted);font:400 11px "DM Mono",monospace;letter-spacing:.15em;text-transform:uppercase}
-#quote{font-size:22px;line-height:1.5;letter-spacing:-.02em}.author{color:var(--muted);font-size:12px}
-.clock{text-align:center;display:flex;flex-direction:column;justify-content:center}.time{font:500 clamp(36px,7vw,58px) "DM Mono",monospace;letter-spacing:-.06em}.date{color:var(--muted);font-size:12px;margin-top:8px}
-.player{margin-top:14px;display:flex;align-items:center;gap:15px}.play{border:0;width:52px;height:52px;border-radius:50%;cursor:pointer;background:#e8edf5;color:#080b12;font-size:17px;transition:.2s}.play:hover{transform:scale(1.06)}
-.track{flex:1}.track strong{font-size:14px;font-weight:600}.track span{display:block;color:var(--muted);font-size:11px;margin-top:4px}.bar{height:3px;background:rgba(255,255,255,.1);border-radius:99px;margin-top:14px;overflow:hidden}.bar i{display:block;width:28%;height:100%;background:var(--accent);border-radius:99px}
-footer{text-align:center;margin-top:55px;color:#566074;font:400 10px "DM Mono",monospace;letter-spacing:.12em}
-@media(max-width:700px){.wrap{padding-top:28px}.grid{grid-template-columns:1fr}nav{margin-bottom:18vh}.quote{min-height:190px}.sub{font-size:14px}}
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+:root{--bg:#090611;--panel:rgba(24,13,39,.78);--purple:#9b6cff;--pink:#ff72ba;--gold:#ffd76a;--text:#fff7ff;--muted:#b8a9c7;--line:rgba(255,255,255,.11)}
+body{font-family:Nunito,sans-serif;color:var(--text);background:radial-gradient(circle at 15% 10%,#352060 0,transparent 28%),radial-gradient(circle at 85% 35%,#401538 0,transparent 25%),linear-gradient(145deg,#08050e,#12081d 55%,#08050e);min-height:100vh;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.28;background-image:radial-gradient(circle,#fff 1px,transparent 1px);background-size:90px 90px;animation:stars 28s linear infinite}@keyframes stars{to{background-position:90px 90px}}
+header{position:sticky;top:0;z-index:20;background:rgba(9,6,17,.72);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.nav{width:min(1080px,92%);margin:auto;height:70px;display:flex;align-items:center;justify-content:space-between}.brand{font:800 22px 'Baloo 2';letter-spacing:.02em}.brand span{color:var(--pink)}nav a{color:var(--muted);text-decoration:none;font-size:13px;font-weight:800;margin-left:22px}nav a:hover{color:#fff}
+main{width:min(1080px,92%);margin:auto}.hero{min-height:680px;display:grid;place-items:center;text-align:center;position:relative;padding:80px 0}.sigil{font-size:74px;filter:drop-shadow(0 0 25px #9b6cff);animation:float 4s ease-in-out infinite}@keyframes float{50%{transform:translateY(-10px) rotate(3deg)}}
+.kicker{color:var(--gold);font-weight:800;letter-spacing:.22em;text-transform:uppercase;font-size:12px;margin:15px 0}.hero h1{font:800 clamp(58px,12vw,125px)/.8 'Baloo 2';letter-spacing:-.05em;text-shadow:0 8px 35px rgba(155,108,255,.35)}.hero h1 span{color:var(--pink)}.hero p{max-width:620px;margin:28px auto 0;color:var(--muted);font-size:16px;line-height:1.8}.btn{display:inline-block;margin-top:30px;padding:13px 23px;border-radius:999px;background:linear-gradient(100deg,var(--purple),var(--pink));color:#fff;text-decoration:none;font-weight:800;box-shadow:0 10px 35px rgba(155,108,255,.25)}
+.section{padding:75px 0}.section-title{text-align:center;margin-bottom:35px}.section-title small{color:var(--gold);font-weight:800;letter-spacing:.16em;text-transform:uppercase}.section-title h2{font:800 44px 'Baloo 2';margin-top:5px}.section-title p{color:var(--muted);margin-top:5px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{background:var(--panel);border:1px solid var(--line);border-radius:28px;padding:30px;box-shadow:0 20px 70px rgba(0,0,0,.22);backdrop-filter:blur(15px)}.about .card:first-child{background:linear-gradient(135deg,rgba(155,108,255,.18),rgba(255,114,186,.08)),var(--panel)}.card h3{font:800 27px 'Baloo 2';margin-bottom:10px}.card p{color:var(--muted);line-height:1.8}.facts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}.fact{padding:15px;border-radius:17px;background:rgba(255,255,255,.045)}.fact b{display:block;color:#fff}.fact span{font-size:12px;color:var(--muted)}
+.characters{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.char{min-height:240px;position:relative;overflow:hidden;padding:22px;border-radius:23px;background:linear-gradient(160deg,rgba(155,108,255,.16),rgba(255,255,255,.035));border:1px solid var(--line);transition:.25s}.char:hover{transform:translateY(-8px);border-color:rgba(255,114,186,.5);box-shadow:0 18px 45px rgba(0,0,0,.3)}.emoji{font-size:45px;margin-bottom:35px}.char h3{font:800 23px 'Baloo 2'}.char p{font-size:12px;line-height:1.6;color:var(--muted);margin-top:3px}.tag{display:inline-block;margin-top:12px;padding:4px 9px;border-radius:999px;background:rgba(255,215,106,.1);color:var(--gold);font-size:10px;font-weight:800}
+.quote{margin-top:18px;text-align:center;padding:45px 20px;background:radial-gradient(circle at center,rgba(155,108,255,.16),transparent 60%),var(--panel)}blockquote{font:700 clamp(23px,4vw,38px)/1.35 'Baloo 2';max-width:750px;margin:auto}.quote small{display:block;color:var(--muted);margin-top:14px}
+footer{padding:60px 0 35px;text-align:center;color:#776782;font-size:11px}footer strong{color:#bda9ce}
+@media(max-width:800px){.characters{grid-template-columns:repeat(2,1fr)}.about{grid-template-columns:1fr}.hero{min-height:610px}.nav nav a{margin-left:9px;font-size:11px}}
+@media(max-width:480px){.characters{grid-template-columns:1fr}.nav{height:60px}.brand{font-size:18px}.nav nav a{display:none}.hero h1{font-size:65px}.section{padding:55px 0}}
 </style>
 </head>
 <body>
-<main class="wrap">
-<nav><span class="logo">MIDNIGHT.</span><span class="status"><i class="dot"></i> ONLINE</span></nav>
-<section class="hero">
-<div class="eyebrow">a small place to slow down</div>
-<h1>take it easy.</h1>
-<p class="sub">Không cần phải vội. Hít một hơi, nghe một chút nhạc, và để mọi thứ chậm lại.</p>
-</section>
-<section class="grid">
-<article class="card quote">
-<div class="label">today's thought</div>
-<div id="quote">“You don't have to figure everything out tonight.”</div>
-<div class="author">— midnight reminder</div>
-</article>
-<article class="card clock">
-<div class="label">local time</div>
-<div class="time" id="time">00:00</div>
-<div class="date" id="date">loading...</div>
-</article>
-</section>
-<section class="card player">
-<button class="play" id="play" aria-label="Play or pause">▶</button>
-<div class="track"><strong>late night / quiet room</strong><span id="state">click play for ambience</span><div class="bar"><i id="progress"></i></div></div>
-</section>
-<footer>made for quiet nights · Bngocc-code / Code-01</footer>
-</main>
-<script>
-const quotes=[
-["“You don't have to figure everything out tonight.”","— midnight reminder"],
-["“Some days, surviving is already enough.”","— a quiet thought"],
-["“Rest is not falling behind.”","— slow down"],
-["“It's okay to be a work in progress.”","— midnight reminder"],
-["“Tomorrow can wait. Breathe first.”","— 02:17 AM"]
-];
-let qi=0;
-setInterval(()=>{const d=new Date();document.querySelector('#time').textContent=d.toLocaleTimeString('vi-VN',{hour:'2-digit',minute:'2-digit'});document.querySelector('#date').textContent=d.toLocaleDateString('vi-VN',{weekday:'long',day:'2-digit',month:'2-digit',year:'numeric'});},1000);
-document.querySelector('#quote').addEventListener('click',()=>{qi=(qi+1)%quotes.length;document.querySelector('#quote').textContent=quotes[qi][0];document.querySelector('.author').textContent=quotes[qi][1]});
-let playing=false, t=28;
-document.querySelector('#play').onclick=()=>{playing=!playing;document.querySelector('#play').textContent=playing?'Ⅱ':'▶';document.querySelector('#state').textContent=playing?'ambience mode on':'paused — back to silence'};
-setInterval(()=>{if(playing){t=t>=100?0:t+.18;document.querySelector('#progress').style.width=t+'%'}},1000);
-</script>
-</body>
-</html>
+<header><div class="nav"><div class="brand">M! <span>IRUMA-KUN</span></div><nav><a href="#story">STORY</a><a href="#cast">CAST</a><a href="#quote">QUOTE</a></nav></div></header>
+<main>
+<section class="hero"><div><div class="sigil">😈</div><div class="kicker">Welcome to the demon world</div><h1>IRUMA<span>-KUN!</span></h1><p>Unusual school. Unusual classmates. And one very kind human trying his best to survive Babyls Demon School.</p><a class="btn" href="#story">ENTER BABYLUS ✦</a></div></section>
+<section class="section" id="story"><div class="section-title"><small>the beginning</small><h2>A human in the demon world</h2><p>A tiny fan-made corner for everyone who loves Iruma's chaotic school life.</p></div><div class="about"><article class="card"><h3>鈴木 入間 · Iruma Suzuki</h3><p>Iruma is a kind-hearted human boy who is sold to a demon, Sullivan, and becomes his adopted grandson. At Babyls, he tries to keep his human identity secret while somehow becoming the center of attention.</p><div class="facts"><div class="fact"><b>Species</b><span>Human</span></div><div class="fact"><b>School</b><span>Babyls Demon School</span></div><div class="fact"><b>Vibe</b><span>Kind • brave • chaotic</span></div><div class="fact"><b>Goal</b><span>Survive school ✦</span></div></div></article><article class="card"><h3>Why Babylus?</h3><p>A school full of demons means every normal school problem gets turned up to eleven. Exams become battles, festivals become disasters, and making friends can accidentally make you famous.</p><div class="facts"><div class="fact"><b>✦ Misfit energy</b><span>Everyone is a little strange.</span></div><div class="fact"><b>✦ Friendship</b><span>Chaos is better together.</span></div><div class="fact"><b>✦ Magic</b><span>Every day feels different.</span></div><div class="fact"><b>✦ Demons</b><span>Probably not as scary as they look.</span></div></div></article></div></section>
+<section class="section" id="cast"><div class="section-title"><small>classmates & teachers</small><h2>The Misfit Crew</h2></div><div class="characters"><article class="char"><div class="emoji">💗</div><h3>Iruma</h3><p>The human who just wants a quiet school life.</p><span class="tag">HUMAN</span></article><article class="char"><div class="emoji">🔥</div><h3>Asmodeus</h3><p>Proud, powerful, and extremely loyal to Iruma.</p><span class="tag">FIRE</span></article><article class="char"><div class="emoji">🎀</div><h3>Clara</h3><p>Maximum chaos. Maximum energy. Zero boredom.</p><span class="tag">CHAOS</span></article><article class="char"><div class="emoji">🐺</div><h3>Kalego</h3><p>Strict teacher with approximately no patience.</p><span class="tag">TEACHER</span></article><article class="char"><div class="emoji">👑</div><h3>Sullivan</h3><p>The demon grandpa who adopted Iruma.</p><span class="tag">GRANDFATHER</span></article></div></section>
+<section class="section" id="quote"><div class="quote card"><blockquote id="q">“Being different doesn't mean you have to be alone.”</blockquote><small>— a little Babylus reminder</small></div></section>
+</main><footer>Fan-made website · <strong>Welcome to Babyls</strong> · Not affiliated with the official creators</footer>
+<script>const q=["“Being different doesn't mean you have to be alone.”","“Maybe a normal day is overrated.”","“Even in a strange world, kindness still matters.”","“Survive first. Figure out the rest later.”"];let i=0;setInterval(()=>{i=(i+1)%q.length;document.querySelector('#q').textContent=q[i]},4000);</script>
+</body></html>
